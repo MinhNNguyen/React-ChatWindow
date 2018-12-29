@@ -1,0 +1,4 @@
+# Ignore node_modules files
+node_modules/
+# Ignore solution files
+src/PossibleSolution/
