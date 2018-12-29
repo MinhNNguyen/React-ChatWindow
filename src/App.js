@@ -1,19 +1,23 @@
+/*
+  This program features chatboxs for two users in single page application
+*/
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ChatBox from './ChatBox';
 
 /*
-This exercise will help you practice many of your newly aquired React skills.
-
-The instructions are included in the `instructions.md` file.
+  Declare usernames of two users
 */
 
 const users = [{ username: 'Amy' }, { username: 'John' }];
 
-const messages= [];
-
 class App extends Component {
+  
+  /*
+    Messages and their senders being saved in the state of the main application
+  */
+  
   state = {
     messages: [
       { username: 'Amy', text: 'Hi, Jon!' },
@@ -30,12 +34,18 @@ class App extends Component {
     return false;
   };
 
+  /*
+    Add new message to the end of the message array 
+  */
   handleMessage = newMessage => {
     this.setState( currState => ({
       messages: [...currState.messages, newMessage],
     }));
   };
 
+  /*
+    Render the UI for the application
+  */
   render() {
     return (
       <div className="App">
